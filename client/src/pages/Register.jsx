@@ -41,8 +41,10 @@ export default function Register() {
   };
 
   return (
-    <div className="register_container p-3 max-w-md mx-auto">
-      <h1 className="uppercase text-white text-3xl text-center font-semibold my-5">
+    <div
+      className={`register_container p-3 max-w-md mx-auto ${error ? 'error-_size' : 'noError_size'}`}
+    >
+      <h1 className="uppercase text-white text-3xl text-center font-semibold my-2">
         Sign up here:
       </h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4 m-4">
@@ -81,6 +83,7 @@ export default function Register() {
           id="password"
           onChange={handleChange}
         />
+        {error && <p className="text-red-700 text-center">{error}</p>}
         <button
           disabled={loading}
           className="register_btn text-black font-bold rounded-lg uppercase"
@@ -94,7 +97,6 @@ export default function Register() {
           <span className="font-semibold text-blue-500">Sign in</span>
         </Link>
       </div>
-      {error && <p className="text-gray-700 mt-5">{error}</p>}
     </div>
   );
 }

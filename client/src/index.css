@@ -27,7 +27,7 @@ header {
   box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.4);
   border-radius: 30px;
   margin-top: 15px;
-  height: 85vh;
+  height: 87vh;
 }
 
 .register_btn {
@@ -43,4 +43,12 @@ header {
 .register_btn:hover {
   box-shadow: 0 0 10px 3px rgba(255, 255, 255);
   transition: box-shadow 0.1s ease-in;
+}
+
+.error_size {
+  height: 87vh;
+}
+
+.noError_size {
+  height: 85vh;
 }
