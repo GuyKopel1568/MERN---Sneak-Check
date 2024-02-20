@@ -1,53 +1,100 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Register() {
+  const [formData, setFormData] = useState({});
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      setLoading(true);
+      const res = await fetch('/api/auth/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+      if (data.success === false) {
+        setLoading(false);
+        setError(data.message);
+        return;
+      }
+      setLoading(false);
+      setError(null);
+      navigate('/sign-in');
+      console.log(data);
+    } catch (error) {
+      setLoading(false);
+      setError(error.message);
+    }
+  };
+
   return (
-    <div className=" register_container p-3 max-w-md mx-auto">
-      <h1 className="text-white text-3xl text-center font-semibold my-5">
-        Fill your details
+    <div className="register_container p-3 max-w-md mx-auto">
+      <h1 className="uppercase text-white text-3xl text-center font-semibold my-5">
+        Sign up here:
       </h1>
-      <form className="flex flex-col gap-4 m-4">
+      <form onSubmit={handleSubmit} className="flex flex-col gap-4 m-4">
         <input
           type="text"
-          placeholder="firstName"
+          placeholder="First Name"
           className="border p-2 rounded-lg text-center"
           id="firstName"
+          onChange={handleChange}
         />
         <input
           type="text"
-          placeholder="lastName"
+          placeholder="Last Name"
           className="border p-2 rounded-lg text-center"
           id="lastName"
+          onChange={handleChange}
         />
         <input
           type="text"
-          placeholder="userName"
+          placeholder="Username"
           className="border p-2 rounded-lg text-center"
-          id="userName"
+          id="username"
+          onChange={handleChange}
         />
         <input
           type="email"
-          placeholder="userName"
+          placeholder="Email"
           className="border p-2 rounded-lg text-center"
           id="email"
+          onChange={handleChange}
         />
         <input
           type="password"
-          placeholder="userName"
+          placeholder="Password"
           className="border p-2 rounded-lg text-center"
           id="password"
+          onChange={handleChange}
         />
-        <button className=" register_btn text-black font-bold rounded-lg uppercase">
-          Register
+        <button
+          disabled={loading}
+          className="register_btn text-black font-bold rounded-lg uppercase"
+        >
+          {loading ? 'Loading...' : 'Sign up'}
         </button>
       </form>
-      <div className="flex  justify-center items-center gap-2 mt-3">
+      <div className="flex justify-center items-center gap-2 mt-3">
         <p>Have an account?</p>
-        <Link to={'/sign-in'}>
+        <Link to="/sign-in">
           <span className="font-semibold text-blue-500">Sign in</span>
         </Link>
       </div>
+      {error && <p className="text-gray-700 mt-5">{error}</p>}
     </div>
   );
 }
