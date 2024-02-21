@@ -17,6 +17,7 @@ const UserSchema = new mongoose.Schema(
       required: true,
       trim: true,
       unique: true,
+      minlength: 6,
     },
     email: {
       type: String,
@@ -27,7 +28,7 @@ const UserSchema = new mongoose.Schema(
     password: {
       type: String,
       required: true,
-      min: 6,
+      minlength: 6,
     },
   },
   { timestamps: true },

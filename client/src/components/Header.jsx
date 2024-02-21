@@ -1,4 +1,3 @@
-import React from 'react';
 import { FaSearch } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
@@ -36,7 +35,7 @@ function Header() {
           </Link>
           <Link to="/sign-in">
             <li className="navlist hover:underline  transition duration-300">
-              Register
+              Sign-in
             </li>
           </Link>
         </ul>
