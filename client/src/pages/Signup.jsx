@@ -1,11 +1,17 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function Register() {
   const [formData, setFormData] = useState({});
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    AOS.init(); // Initialize AOS
+  }, []);
 
   const handleChange = (e) => {
     setFormData({
@@ -44,10 +50,17 @@ export default function Register() {
     <div
       className={`register_container p-3 max-w-md mx-auto ${error ? 'error-_size' : 'noError_size'}`}
     >
-      <h1 className="uppercase text-white text-3xl text-center font-semibold my-2">
+      <h1
+        className="uppercase text-white text-3xl text-center font-semibold my-2"
+        data-aos="fade-left"
+      >
         Sign up here:
       </h1>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4 m-4">
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col gap-4 m-4 "
+        data-aos="fade-left"
+      >
         <input
           type="text"
           placeholder="First Name"
