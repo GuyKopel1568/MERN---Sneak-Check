@@ -23,6 +23,17 @@ header {
   box-shadow: 0 0 15px 5px rgba(199, 148, 148, 0.4);
   margin: 20px;
 }
+
+.nav_collapse {
+  left: auto;
+  width: 300px;
+  box-shadow: 0 0 15px 5px rgba(199, 148, 148, 0.4);
+  background-color: rgba(255, 255, 255, 0.367);
+  backdrop-filter: blur(5px);
+  margin-top: 10px;
+  padding: 20px;
+  z-index: 100;
+}
 /* =================REGISTER + SIGN-IN================================================*/
 .register_container {
   background-color: rgba(43, 43, 43, 0.2);
