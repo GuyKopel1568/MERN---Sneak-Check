@@ -74,18 +74,21 @@ function Header() {
             <Link
               to="/"
               className="navlist hover:underline transition duration-300"
+              onClick={() => setIsOpen(false)}
             >
               Home
             </Link>
             <Link
               to="/about"
               className="navlist hover:underline transition duration-300"
+              onClick={() => setIsOpen(false)}
             >
               About
             </Link>
             <Link
               to="/sign-in"
               className="navlist hover:underline transition duration-300"
+              onClick={() => setIsOpen(false)}
             >
               Sign-in
             </Link>
