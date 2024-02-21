@@ -20,7 +20,7 @@ header {
   text-shadow: 0 10px 10px rgba(255, 255, 255, 0.5); /* Adjust the values as needed */
 }
 
-/* =================REGISTER================================================*/
+/* =================REGISTER + SIGN-IN================================================*/
 .register_container {
   background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
@@ -51,4 +51,15 @@ header {
 
 .noError_size {
   height: 85vh;
+}
+
+/* =================SIGN-IN================================================*/
+
+.signin_container {
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.4);
+  border-radius: 30px;
+  margin-top: 10vh;
+  height: 50vh;
 }
