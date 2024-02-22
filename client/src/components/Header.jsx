@@ -10,13 +10,13 @@ function Header() {
   };
 
   return (
-    <header className="navbar_container p-2 bg-transparent shadow-md rounded-3xl mx-auto relative">
+    <header className="navbar_container p-2 bg-black bg-opacity-30 shadow-md rounded-3xl mx-auto relative">
       <div className="flex items-center justify-between max-auto max-w-6xl">
         <div className="flex items-center">
           <Link to="/">
-            <h1 className="font-bold text-white sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
+            <h1 className="font-bold text-white sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl shadow-sm">
               <span className="text-[#a3a3a3]">Sneak</span>
-              <span className="text-[#525252]">Check</span>
+              <span className="text-[#78716c]">Check</span>
             </h1>
           </Link>
         </div>

@@ -8,6 +8,7 @@ import {
   signInSuccess,
   signInFailure,
 } from '../redux/user/userSlice';
+import OAuth from '../components/OAuth';
 
 export default function SignIn() {
   const [formData, setFormData] = useState({});
@@ -55,7 +56,7 @@ export default function SignIn() {
       className={`signin_container p-3 max-w-md mx-auto ${error ? 'error-_size' : 'noError_size'}`}
     >
       <h1
-        className="uppercase text-white text-3xl text-center font-semibold my-2"
+        className="uppercase text-[#27272a] text-3xl text-center font-semibold my-2"
         data-aos="fade-left"
         data-aos-duration="1000"
       >
@@ -87,12 +88,13 @@ export default function SignIn() {
         >
           {loading ? 'Loading...' : 'Sign in'}
         </button>
+        <OAuth />
       </form>
 
       <div className="flex justify-center items-center gap-2 mt-3">
         <p>Dont have an account?</p>
-        <Link to="/signUp">
-          <span className="font-semibold text-blue-500">Sign up here</span>
+        <Link to="/sign-up">
+          <span className="font-semibold text-blue-600">Sign up here</span>
         </Link>
       </div>
     </div>

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import OAuth from '../components/OAuth';
 
 export default function Register() {
   const [formData, setFormData] = useState({});
@@ -51,7 +52,7 @@ export default function Register() {
       className={`register_container p-3 max-w-md mx-auto ${error ? 'error-_size' : 'noError_size'}`}
     >
       <h1
-        className="uppercase text-white text-3xl text-center font-semibold my-2"
+        className="uppercase text-[#27272a] text-3xl text-center font-semibold my-2"
         data-aos="fade-left"
       >
         Sign up here:
@@ -63,16 +64,9 @@ export default function Register() {
       >
         <input
           type="text"
-          placeholder="First Name"
+          placeholder="Full Name"
           className="border p-2 rounded-lg text-center"
-          id="firstName"
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          placeholder="Last Name"
-          className="border p-2 rounded-lg text-center"
-          id="lastName"
+          id="FullName"
           onChange={handleChange}
         />
         <input
@@ -103,11 +97,12 @@ export default function Register() {
         >
           {loading ? 'Loading...' : 'Sign up'}
         </button>
+        <OAuth />
       </form>
       <div className="flex justify-center items-center gap-2 mt-3">
         <p>Have an account?</p>
         <Link to="/sign-in">
-          <span className="font-semibold text-blue-500">Sign in</span>
+          <span className="font-semibold text-blue-600">Sign in</span>
         </Link>
       </div>
     </div>

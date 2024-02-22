@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  background: url('/src/assets/img/sneak-check.png');
+  background: url('../src/assets/img/sneak-check.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -20,7 +20,7 @@ header {
   text-shadow: 0 10px 10px rgba(255, 255, 255, 0.5); /* Adjust the values as needed */
 }
 .navbar_container {
-  box-shadow: 0 0 15px 5px rgba(199, 148, 148, 0.4);
+  box-shadow: 0 0 15px 5px rgba(86, 82, 77, 0.4);
   margin: 20px;
 }
 
@@ -63,16 +63,17 @@ header {
 }
 
 .noError_size {
-  height: 82vh;
+  height: 100vh;
 }
 
 /* =================SIGN-IN================================================*/
 
 .signin_container {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(43, 43, 43, 0.2);
   backdrop-filter: blur(10px);
   box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.4);
   border-radius: 30px;
-  margin-top: 10vh;
-  height: 50vh;
+  margin-top: 5vh;
+  height: 80vh;
+  padding: 30px;
 }
