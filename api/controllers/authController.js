@@ -4,11 +4,10 @@ import jwt from 'jsonwebtoken';
 import { errorHandler } from '../utils/error.js';
 
 export const register = async (req, res, next) => {
-  const { firstName, lastName, username, email, password } = req.body;
+  const { fullname, username, email, password } = req.body;
   const hashedPassword = bcrypt.hashSync(password, 10);
   const newUser = new User({
-    firstName,
-    lastName,
+    fullname,
     username,
     email,
     password: hashedPassword,

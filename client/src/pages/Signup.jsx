@@ -11,7 +11,7 @@ export default function Register() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    AOS.init(); // Initialize AOS
+    AOS.init();
   }, []);
 
   const handleChange = (e) => {
@@ -66,7 +66,7 @@ export default function Register() {
           type="text"
           placeholder="Full Name"
           className="border p-2 rounded-lg text-center"
-          id="FullName"
+          id="fullname"
           onChange={handleChange}
         />
         <input

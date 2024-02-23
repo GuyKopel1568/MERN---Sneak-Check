@@ -34,6 +34,7 @@ function OAuth() {
       console.log('Could not sign in with GOOGLE', error);
     }
   };
+
   return (
     <button
       onClick={handleGoogleClick}
