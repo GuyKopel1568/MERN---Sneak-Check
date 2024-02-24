@@ -1,9 +1,11 @@
 import { FaSearch, FaBars, FaTimes } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const { currentUser } = useSelector((state) => state.user);
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
@@ -32,24 +34,42 @@ function Header() {
             </button>
           </form>
         </div>
-        <div className="hidden md:flex items-center space-x-4">
+
+        <div className="hidden md:flex items-center space-x-4 ">
           <Link
             to="/"
-            className="font-semibold text-lg text-white hover:underline transition duration-300"
+            className="font-semibold text-lg text-white hover:underline transition duration-300 link-shadow"
           >
             Home
           </Link>
           <Link
             to="/about"
-            className="font-semibold text-lg text-white hover:underline transition duration-300"
+            className="font-semibold text-lg text-white hover:underline transition duration-300 link-shadow"
           >
             About
           </Link>
-          <Link
-            to="/sign-in"
-            className="font-semibold text-lg text-white hover:underline transition duration-300"
-          >
-            Sign-in
+
+          <Link to="/profile">
+            {currentUser ? (
+              <div className="flex text-white items-center justify-center gap-1">
+                <img
+                  className="rounded-full h-12 w-12 object-cover"
+                  src={
+                    currentUser && currentUser.photo
+                      ? currentUser.photo
+                      : 'client/src/assets/img/profileImg.jpg'
+                  }
+                  alt="profile"
+                />
+                <span>
+                  <u>Hello, {currentUser.fullname}</u>
+                </span>
+              </div>
+            ) : (
+              <span className="font-semibold text-lg text-white hover:underline transition duration-300 link-shadow">
+                Sign-in
+              </span>
+            )}
           </Link>
         </div>
 
@@ -71,26 +91,37 @@ function Header() {
       {isOpen && (
         <div className="nav_collapse md:hidden absolute inset-x-0  bg-white p-2 shadow-md rounded-3xl">
           <ul className="flex flex-col items-center font-semibold text-lg gap-4">
+            <Link to="/profile">
+              {currentUser ? (
+                <div className="flex justify-center items-center gap-1">
+                  <img
+                    className="rounded-full h-12 w-12 object-cover"
+                    src={
+                      currentUser ? currentUser.photo : '/default-profile.jpg'
+                    }
+                    alt="profile"
+                  />
+                  <span className="ml-2">Profile</span>
+                </div>
+              ) : (
+                <li className="font-semibold text-lg hover:underline transition duration-300">
+                  Sign-in
+                </li>
+              )}
+            </Link>
             <Link
               to="/"
-              className="navlist hover:underline transition duration-300"
+              className=" hover:underline transition duration-300"
               onClick={() => setIsOpen(false)}
             >
               Home
             </Link>
             <Link
               to="/about"
-              className="navlist hover:underline transition duration-300"
+              className=" hover:underline transition duration-300"
               onClick={() => setIsOpen(false)}
             >
               About
-            </Link>
-            <Link
-              to="/sign-in"
-              className="navlist hover:underline transition duration-300"
-              onClick={() => setIsOpen(false)}
-            >
-              Sign-in
             </Link>
           </ul>
         </div>

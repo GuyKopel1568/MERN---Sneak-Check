@@ -16,7 +16,7 @@ header {
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Adjust the values as needed */
 }
 
-.navlist:hover {
+.link-shadow:hover {
   text-shadow: 0 10px 10px rgba(255, 255, 255, 0.5); /* Adjust the values as needed */
 }
 .navbar_container {

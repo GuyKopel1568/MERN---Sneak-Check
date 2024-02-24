@@ -97,6 +97,11 @@ export default function Register() {
         >
           {loading ? 'Loading...' : 'Sign up'}
         </button>
+        <div className="flex items-center">
+          <hr className="flex-grow border-gray-300" />
+          <div className="mx-3 text-white uppercase">or continue with:</div>
+          <hr className="flex-grow border-gray-300" />
+        </div>
         <OAuth />
       </form>
       <div className="flex justify-center items-center gap-2 mt-3">
