@@ -12,11 +12,11 @@ function Header() {
   };
 
   return (
-    <header className="navbar_container p-2 bg-black bg-opacity-30 shadow-md rounded-3xl mx-auto relative">
-      <div className="flex items-center justify-between max-auto max-w-6xl">
+    <header className="navbar_container p-2  bg-black bg-opacity-30 shadow-md rounded-3xl mx-auto relative">
+      <div className="flex items-center justify-between max-auto max-w-6xl ">
         <div className="flex items-center">
           <Link to="/">
-            <h1 className="font-bold text-white sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl shadow-sm">
+            <h1 className="font-bold text-white sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl">
               <span className="text-[#a3a3a3]">Sneak</span>
               <span className="text-[#78716c]">Check</span>
             </h1>
@@ -95,13 +95,16 @@ function Header() {
               {currentUser ? (
                 <div className="flex justify-center items-center gap-1">
                   <img
+                    onClick={() => setIsOpen(false)}
                     className="rounded-full h-12 w-12 object-cover"
                     src={
                       currentUser ? currentUser.photo : '/default-profile.jpg'
                     }
                     alt="profile"
                   />
-                  <span className="ml-2">Profile</span>
+                  <span onClick={() => setIsOpen(false)} className="ml-2">
+                    Profile
+                  </span>
                 </div>
               ) : (
                 <li className="font-semibold text-lg hover:underline transition duration-300">
