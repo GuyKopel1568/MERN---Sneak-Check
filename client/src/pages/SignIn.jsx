@@ -52,55 +52,51 @@ export default function SignIn() {
   };
 
   return (
-    <div
-      className={`signin_container p-3 max-w-md mx-auto ${error ? 'error-_size' : 'noError_size'}`}
-    >
-      <h1
-        className="uppercase text-[#27272a] text-3xl text-center font-semibold my-2"
-        data-aos="fade-left"
+    <div className="flex justify-center items-center h-screen">
+      <div
+        className={`signin_container p-3 max-w-md mx-auto ${error ? 'error-_size' : 'noError_size'}`}
+        data-aos={error ? undefined : 'fade-right'}
         data-aos-duration="1000"
       >
-        Sign in here:
-      </h1>
-      <form
-        onSubmit={handleSubmit}
-        className="flex flex-col gap-4 m-4"
-        data-aos="fade-left"
-      >
-        <input
-          type="email"
-          placeholder="Email"
-          className="border p-2 rounded-lg text-center"
-          id="email"
-          onChange={handleChange}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          className="border p-2 rounded-lg text-center"
-          id="password"
-          onChange={handleChange}
-        />
-        {error && <p className="text-red-700 text-center">{error}</p>}
-        <button
-          disabled={loading}
-          className="register_btn text-black font-bold rounded-lg uppercase"
-        >
-          {loading ? 'Loading...' : 'Sign in'}
-        </button>
-        <div className="flex items-center">
-          <hr className="flex-grow border-gray-300" />
-          <div className="mx-3 text-white uppercase">or continue with:</div>
-          <hr className="flex-grow border-gray-300" />
-        </div>
-        <OAuth />
-      </form>
+        <h1 className="uppercase text-[#27272a] text-3xl text-center font-semibold my-2">
+          Sign in here:
+        </h1>
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4 m-4">
+          <input
+            type="email"
+            placeholder="Email"
+            className="border p-2 rounded-lg text-center"
+            id="email"
+            onChange={handleChange}
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            className="border p-2 rounded-lg text-center"
+            id="password"
+            onChange={handleChange}
+          />
+          {error && <p className="text-red-700 text-center">{error}</p>}
+          <button
+            disabled={loading}
+            className="register_btn text-black font-bold rounded-lg uppercase"
+          >
+            {loading ? 'Loading...' : 'Sign in'}
+          </button>
+          <div className="flex items-center">
+            <hr className="flex-grow border-gray-300" />
+            <div className="mx-3 text-white uppercase">or continue with:</div>
+            <hr className="flex-grow border-gray-300" />
+          </div>
+          <OAuth />
+        </form>
 
-      <div className="flex justify-center items-center gap-2 mt-3">
-        <p>Dont have an account?</p>
-        <Link to="/sign-up">
-          <span className="font-semibold text-blue-600">Sign up here</span>
-        </Link>
+        <div className="flex justify-center items-center gap-2 mt-3">
+          <p>Dont have an account?</p>
+          <Link to="/sign-up">
+            <span className="font-semibold text-blue-600">Sign up here</span>
+          </Link>
+        </div>
       </div>
     </div>
   );

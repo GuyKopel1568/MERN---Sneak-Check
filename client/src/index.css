@@ -13,11 +13,12 @@ body {
 /* =================NAVBAR================================================*/
 
 header {
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Adjust the values as needed */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  z-index: 10000;
 }
 
 .link-shadow:hover {
-  text-shadow: 0 10px 10px rgba(255, 255, 255, 0.5); /* Adjust the values as needed */
+  text-shadow: 0 10px 10px rgba(255, 255, 255, 0.5);
 }
 .navbar_container {
   box-shadow: 0 0 15px 5px rgba(86, 82, 77, 0.4);
@@ -32,7 +33,7 @@ header {
   backdrop-filter: blur(5px);
   margin-top: 10px;
   padding: 20px;
-  z-index: 100;
+  z-index: 10000;
 }
 /* =================REGISTER + SIGN-IN================================================*/
 .register_container {
@@ -40,7 +41,7 @@ header {
   backdrop-filter: blur(10px);
   box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.4);
   border-radius: 30px;
-  margin-top: 12px;
+  width: 25rem;
 }
 
 .register_btn {
@@ -59,11 +60,11 @@ header {
 }
 
 .error_size {
-  height: 87vh;
+  height: 100vh;
 }
 
 .noError_size {
-  height: 100vh;
+  height: 82vh;
 }
 
 /* =================SIGN-IN================================================*/
@@ -75,6 +76,7 @@ header {
   border-radius: 30px;
   margin-top: 5vh;
   height: 80vh;
+  width: 25rem;
   margin: 30px;
 }
 
@@ -85,7 +87,7 @@ header {
   background-color: rgba(0, 0, 0, 0.788);
   overflow: hidden;
   border-radius: 7rem;
-  height: 90vh;
+  height: 100vh;
   width: 25rem;
   padding: 25px;
   backdrop-filter: blur(10px);
