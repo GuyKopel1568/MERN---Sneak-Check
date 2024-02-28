@@ -93,6 +93,12 @@ function Profile() {
           </p>
           <input
             type="text"
+            placeholder="Fullname"
+            className="bg-[#404040] text-white rounded-3xl hover:opacity-80 block mx-auto border p-3 w-full"
+            id="username"
+          />
+          <input
+            type="text"
             placeholder="Username"
             className="bg-[#404040] text-white rounded-3xl hover:opacity-80 block mx-auto border p-3 w-full"
             id="username"

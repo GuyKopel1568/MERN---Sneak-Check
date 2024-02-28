@@ -14,12 +14,12 @@ export const register = async (req, res, next) => {
   });
   try {
     await newUser.save();
+    console.log(newUser);
     res.status(201).json('User created successfully!');
   } catch (error) {
     next(error);
   }
 };
-
 export const signin = async (req, res, next) => {
   const { email, password } = req.body;
   try {
