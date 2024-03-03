@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -131,11 +132,11 @@ function Profile() {
   return (
     <div className="flex justify-center items-center" data-aos="zoom-in-up">
       <div className="profile_container text-center max-w-lg mx-auto">
-        <h1 className="profile_title uppercase font-semibold text-5xl text-[#a8a29e] mb-4">
-          Profile
+        <h1 className="profile_title uppercase font-semibold text-4xl text-[#a8a29e] ">
+          {currentUser.fullname} Profile
         </h1>
 
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-3 ">
           <input
             onChange={(e) => setFile(e.target.files[0])}
             type="file"
@@ -166,40 +167,51 @@ function Profile() {
               ''
             )}
           </p>
+          <div className="flex w-full gap-5">
+            <div className="flex flex-col text-white uppercase">
+              <p>Full Name:</p>
+              <input
+                type="text"
+                defaultValue={currentUser.fullname}
+                className="bg-[#404040] text-white rounded-3xl hover:opacity-80 border p-3 w-full"
+                onChange={handleChange}
+                id="fullname"
+              />
+            </div>
+            <div className="flex flex-col text-white uppercase">
+              <p>Username:</p>
+              <input
+                type="text"
+                defaultValue={currentUser.username}
+                className="bg-[#404040] text-white rounded-3xl hover:opacity-80 border p-3 w-full"
+                onChange={handleChange}
+                id="username"
+              />
+            </div>
+          </div>
 
-          <input
-            type="text"
-            defaultValue={currentUser.fullname}
-            className="bg-[#404040] text-white rounded-3xl hover:opacity-80 block mx-auto border p-3 w-full"
-            onChange={handleChange}
-            id="fullname"
-          />
-
-          <input
-            type="text"
-            placeholder="Username"
-            defaultValue={currentUser.username}
-            className="bg-[#404040] text-white rounded-3xl hover:opacity-80 block mx-auto border p-3 w-full"
-            onChange={handleChange}
-            id="username"
-          />
-
-          <input
-            type="text"
-            placeholder="Email"
-            defaultValue={currentUser.email}
-            className="bg-[#404040] text-white rounded-3xl hover:opacity-80 block mx-auto border p-3 w-full"
-            onChange={handleChange}
-            id="email"
-          />
-
-          <input
-            type="password"
-            placeholder="Password"
-            id="password"
-            className="bg-[#404040] text-white rounded-3xl hover:opacity-80 block mx-auto border p-3 w-full"
-            onChange={handleChange}
-          />
+          <div className="flex gap-5 ">
+            <div className="flex flex-col w-full text-white uppercase">
+              <p>Email:</p>
+              <input
+                type="email"
+                defaultValue={currentUser.email}
+                className="bg-[#404040] text-white rounded-3xl hover:opacity-80 border p-3 w-full"
+                onChange={handleChange}
+                id="email"
+              />
+            </div>
+            <div className="flex flex-col w-full text-white uppercase">
+              <p>Password:</p>
+              <input
+                type="password"
+                className="bg-[#404040] text-white rounded-3xl hover:opacity-80 border p-3 w-full"
+                onChange={handleChange}
+                placeholder="password"
+                id="password"
+              />
+            </div>
+          </div>
 
           <button
             disabled={loading}
@@ -207,6 +219,12 @@ function Profile() {
           >
             {loading ? 'Loading...' : 'Update'}
           </button>
+          <Link
+            to={'/sneaker-upload'}
+            className="upload_btn font-semibold uppercase"
+          >
+            SELL / TRADE SNEAKER
+          </Link>
         </form>
         <div className="flex justify-between m-1 pl-3 pr-3">
           <span

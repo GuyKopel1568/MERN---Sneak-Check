@@ -1,3 +1,5 @@
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -87,8 +89,8 @@ header {
   background-color: rgba(0, 0, 0, 0.788);
   overflow: hidden;
   border-radius: 7rem;
-  height: 110vh;
-  width: 25rem;
+  height: 95vh;
+  width: 30rem;
   padding: 25px;
   backdrop-filter: blur(10px);
 }
@@ -115,4 +117,30 @@ header {
 .account_out:hover,
 .account_dlt:hover {
   text-shadow: 0 0 20px rgb(202, 105, 105);
+}
+
+.upload_btn {
+  padding: 5px;
+  background-color: rgba(245, 199, 199, 0.617);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+  border-radius: 15px;
+  transition: box-shadow 0.3s ease;
+}
+.upload_btn:hover {
+  box-shadow: 0 0 10px 3px rgba(245, 199, 199, 0.617);
+}
+
+/* =================SNEAKER-UPLOAD================================================*/
+.upload_container {
+  box-shadow: 0 0 15px 15px rgba(255, 255, 255, 0.4);
+  background-color: rgba(0, 0, 0, 0.788);
+  overflow: hidden;
+  border-radius: 7rem;
+  height: 95vh;
+  width: 30rem;
+  padding: 25px;
+  backdrop-filter: blur(10px);
 }
