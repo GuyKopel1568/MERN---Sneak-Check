@@ -3,10 +3,9 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import userRoutes from './routes/userRoutes.js';
 import authRoutes from './routes/authRoutes.js';
+import sneakerRoutes from './routes/sneakerRoutes.js';
 import cookieParser from 'cookie-parser';
-
 dotenv.config({ path: 'config.env' });
-
 console.log(process.env.DATABASE_URL);
 console.log(process.env.DATABASE_PASS);
 
@@ -35,6 +34,7 @@ app.listen(3000, () => {
 // Define routes
 app.use('/api/user', userRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/sneaker', sneakerRoutes);
 
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
