@@ -137,15 +137,13 @@ header {
   background-color: rgba(0, 0, 0, 0.788);
   overflow: hidden;
   border-radius: 7rem;
-  height: 200vh;
-  width: 30rem;
   padding: 25px;
   backdrop-filter: blur(10px);
 }
 
 .map-container {
   float: right;
-  height: 400px;
+  height: 300px;
   width: 400px;
   border-radius: 4rem !important;
   margin: 20px;
